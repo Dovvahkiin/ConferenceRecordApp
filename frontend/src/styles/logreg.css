@@ -6,7 +6,6 @@
   align-items: center;
   flex-direction: column;
   color: var(--textColor);
-  height: 70vh;
 }
 
 .loginForm {
