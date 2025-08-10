@@ -20,9 +20,8 @@ function FormLogin() {
     <div className="loginForm">
       <form onSubmit={handleSubmit}>
         <h1 style={{ textAlign: "center" }}>
-          Ulogujte se da bi pristupili aplikaciji
+          Ulogujte se da bi pristupili aplikaciji!
         </h1>
-
         <div className="formField">
           <label htmlFor="">Email:</label>
           <input type="email" value={email} onChange={emailChange} />
@@ -32,6 +31,7 @@ function FormLogin() {
           <input type="password" value={password} onChange={passwordChange} />
         </div>
         <button type="submit">Prijavi se</button>
+        <div className="test"></div>
       </form>
     </div>
   );
