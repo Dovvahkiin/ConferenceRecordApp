@@ -25,4 +25,5 @@ a {
 
 .navBarMain > a:hover {
   background-color: #40a4da;
+  transition: 0.2s ease-in-out;
 }

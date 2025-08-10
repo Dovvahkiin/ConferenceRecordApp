@@ -6,7 +6,6 @@ function App() {
   return (
     <div style={{ border: "1px solid #2c7094" }}>
       <Header />
-      <RegisterPage />
     </div>
   );
 }

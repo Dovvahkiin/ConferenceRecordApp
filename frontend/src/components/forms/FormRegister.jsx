@@ -30,21 +30,32 @@ function FormRegister() {
         </h1>
         <div className="formField reg">
           <label htmlFor="">Email:</label>
-          <input type="email" value={email} onChange={emailChange} />
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            value={email}
+            onChange={emailChange}
+          />
         </div>
         <div className="formField reg">
           <label htmlFor="">Password:</label>
-          <input type="password" value={password} onChange={passwordChange} />
+          <input
+            placeholder="Enter your password"
+            type="password"
+            value={password}
+            onChange={passwordChange}
+          />
         </div>
         <div className="formField reg">
           <label htmlFor="">Repeat Password:</label>
           <input
+            placeholder="Enter your password again"
             type="password"
             value={againPassword}
             onChange={repeatPassword}
           />
         </div>
-        <button type="submit">Registruj se</button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );

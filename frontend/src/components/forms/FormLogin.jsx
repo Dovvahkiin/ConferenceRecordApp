@@ -24,14 +24,23 @@ function FormLogin() {
         </h1>
         <div className="formField">
           <label htmlFor="">Email:</label>
-          <input type="email" value={email} onChange={emailChange} />
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            value={email}
+            onChange={emailChange}
+          />
         </div>
         <div className="formField">
           <label htmlFor="">Password:</label>
-          <input type="password" value={password} onChange={passwordChange} />
+          <input
+            placeholder="Enter your password"
+            type="password"
+            value={password}
+            onChange={passwordChange}
+          />
         </div>
-        <button type="submit">Prijavi se</button>
-        <div className="test"></div>
+        <button type="submit">Login</button>
       </form>
     </div>
   );

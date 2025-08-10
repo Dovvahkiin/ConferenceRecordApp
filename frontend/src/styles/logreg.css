@@ -5,16 +5,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: var(--textColor);
+  color: white;
+  height: 85vh;
 }
 
 .loginForm {
   width: 30%;
-  box-shadow: 0px 0px 5px 5px #144792;
+  box-shadow: 0px 0px 3px 3px #2a5391;
   padding: 0 3%;
-  margin-top: 5%;
+  margin-top: 1%;
   margin-bottom: 5%;
-  background-color: #4b49be28;
+  background-color: #74b3e628;
   backdrop-filter: blur(1000px);
 }
 
@@ -39,15 +40,29 @@
   text-align: center;
   min-width: 70%;
   box-shadow: 0px 0.5vh 15px #285479;
+  padding: 1%;
 }
 
 .loginForm form button {
   width: 33%;
-  margin: 5% 33%;
+  margin: 5% 67%;
   padding: 2.5% 0;
   border: none;
   border-radius: 20px 20px;
   box-shadow: 0px 0.5vh 15px #285479;
+  cursor: pointer;
+}
+
+.loginForm form button:hover {
+  color: white;
+  background-color: var(--backgroundColorPrimary);
+  transition: 0.2s ease-in-out;
+}
+
+.loginForm form button:active:focus {
+  padding: 1% 0;
+  width: 30%;
+  transition: 0.15s ease-in-out;
 }
 
 .loginForm h1 {
