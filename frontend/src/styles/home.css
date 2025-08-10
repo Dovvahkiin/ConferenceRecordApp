@@ -1,0 +1,25 @@
+.homeContainer {
+  background-color: var(--backgroundColorSeconday);
+  margin: 0;
+  padding: 2%;
+}
+.homeContainer > h1,
+.homeContainer > p {
+  margin: 0;
+  color: white;
+}
+.homeContainer > h1 {
+  padding-bottom: 1%;
+}
+
+.categoryRecord {
+  border: 1px solid #6be9ff;
+  padding: 1%;
+  margin-bottom: 0.5%;
+}
+.categoryRecord p {
+  color: white;
+}
+.categoryRecord h2 {
+  color: #6be9ff;
+}
