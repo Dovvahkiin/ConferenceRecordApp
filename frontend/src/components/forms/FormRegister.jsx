@@ -26,7 +26,7 @@ function FormRegister() {
     <div className="loginForm reg">
       <form onSubmit={handleSubmit}>
         <h1 style={{ textAlign: "center" }}>
-          Registrujte novi nalog se da bi pristupili aplikaciji
+          Please enter your register credentials!
         </h1>
         <div className="formField reg">
           <label htmlFor="">Email:</label>

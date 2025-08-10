@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/logreg.css";
-import FormLogin from "./forms/FormLogin";
-import FormRegister from "./forms/FormRegister";
+import "../../styles/logreg.css";
+import FormLogin from "../forms/FormLogin";
+import FormRegister from "../forms/FormRegister";
 
 function LoginPage() {
   return (

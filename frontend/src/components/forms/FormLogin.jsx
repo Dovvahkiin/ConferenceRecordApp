@@ -20,7 +20,7 @@ function FormLogin() {
     <div className="loginForm">
       <form onSubmit={handleSubmit}>
         <h1 style={{ textAlign: "center" }}>
-          Ulogujte se da bi pristupili aplikaciji!
+          Please insert your credentials and login!
         </h1>
         <div className="formField">
           <label htmlFor="">Email:</label>

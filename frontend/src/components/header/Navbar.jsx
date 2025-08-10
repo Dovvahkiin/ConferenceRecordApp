@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/headerStyles/navBarStyle.css";
-import { LoginPage, RegisterPage } from "../logRegPage";
+import { LoginPage, RegisterPage } from "../pages/logRegPage";
 
 function Navbar() {
   return (

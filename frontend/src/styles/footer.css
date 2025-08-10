@@ -1,0 +1,12 @@
+.footerContainer {
+  background-color: var(--backgroundColorPrimary);
+  margin: 0;
+  padding: 0.5%;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.footerContainer p {
+  margin: 0;
+}
