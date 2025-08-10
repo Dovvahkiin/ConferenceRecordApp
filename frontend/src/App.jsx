@@ -1,5 +1,5 @@
 import "./styles/app.css";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import { LoginPage, RegisterPage } from "./components/logRegPage";
 
 function App() {
