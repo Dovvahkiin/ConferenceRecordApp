@@ -1,0 +1,60 @@
+.logCont {
+  background-color: var(--backgroundColorSeconday);
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--textColor);
+  height: 70vh;
+}
+
+.loginForm {
+  width: 30%;
+  box-shadow: 0px 0px 5px 5px #144792;
+  padding: 0 3%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: #4b49be28;
+  backdrop-filter: blur(1000px);
+}
+
+.loginForm > form {
+  gap: 1vh;
+  margin: 10vh auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formField {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}
+.formField > input {
+  border-radius: 10px 10px;
+  border: none;
+  text-align: center;
+  min-width: 70%;
+  box-shadow: 0px 0.5vh 15px #285479;
+}
+
+.loginForm form button {
+  width: 33%;
+  margin: 5% 33%;
+  padding: 2.5% 0;
+  border: none;
+  border-radius: 20px 20px;
+  box-shadow: 0px 0.5vh 15px #285479;
+}
+
+.loginForm h1 {
+  font-size: 1.3rem;
+}
+
+.loginForm.reg {
+  width: 50% !important;
+}

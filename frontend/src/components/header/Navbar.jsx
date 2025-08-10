@@ -1,11 +1,14 @@
 import React from "react";
 import "../../styles/headerStyles/navBarStyle.css";
+import { LoginPage, RegisterPage } from "../logRegPage";
 
 function Navbar() {
   return (
-    <div className="navBarMain">
-      <a href="/">Login</a>
-      <a href="/">Register</a>
+    <div className="container">
+      <div className="navBarMain">
+        <a href={LoginPage}>Login</a>
+        <a href="../forms/FormRegister.jsx">Register</a>
+      </div>
     </div>
   );
 }
