@@ -40,7 +40,9 @@ function FormLogin() {
             onChange={passwordChange}
           />
         </div>
-        <button type="submit">Login</button>
+        <button className="classicButton" type="submit">
+          Login
+        </button>
       </form>
     </div>
   );

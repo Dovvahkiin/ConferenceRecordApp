@@ -55,7 +55,9 @@ function FormRegister() {
             onChange={repeatPassword}
           />
         </div>
-        <button type="submit">Register</button>
+        <button type="submit" className="classicButton">
+          Register
+        </button>
       </form>
     </div>
   );
