@@ -14,7 +14,7 @@ function Home() {
       <div className="categoryRecord">
         <h2>Meeting record 2</h2>
         <p>
-          Date: <span>03.04.2025.</span>
+          Date: <span>03.04.2025. </span>
         </p>
       </div>
     </div>
