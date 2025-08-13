@@ -1,5 +1,13 @@
-const RecordGetModel = require("../models/recordModel.js");
+const { RecordGetModel, RecordPostModel } = require("../models/recordModel.js");
+/* const [recordGetInstance, recordPostInstance] = [
+  new RecordGetModel(),
+  new RecordPostModel(),
+]; */
 const recordGetInstance = new RecordGetModel();
+const recordPostInstance = new RecordPostModel();
+
+/* const recordGetInstance = new RecordGetModel();
+const recordPostInstance = new RecordPostModel(); */
 
 class RecordGetController {
   GetRecordsControl(req, res) {
@@ -15,4 +23,23 @@ class RecordGetController {
   }
 }
 
-module.exports = RecordGetController;
+class RecordPostController {
+  CreateNewRecord(req, res) {
+    const { title, text } = req.body;
+
+    if (!title || !text) {
+      res.status(400).json({
+        message: "You cannot submit with title or text empty field. \n",
+        titleMessage: title,
+        textMessage: text,
+      });
+    }
+    const newRecord = recordPostInstance.CreateNewRecord(title, text);
+    return res.json({
+      message: "Added successfuly",
+      record: newRecord,
+    });
+  }
+}
+
+module.exports = { RecordGetController, RecordPostController };

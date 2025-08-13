@@ -3,18 +3,18 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config("./.env");
 const pg = require("pg");
-const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
 const configData = require("./config/data.js");
+const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const UserRouter = require("./routes/UserRoute.js");
 const RecordRouter = require("./routes/RecordRoute.js");
 
-//main variables
-const app = express();
-
-app.use(UserRouter);
-app.use(RecordRouter);
+app.use("/", UserRouter);
+app.use("/", RecordRouter);
 
 //app.use(cors(configData.corsOptions));
 
