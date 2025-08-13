@@ -1,12 +1,12 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "name": "John",
       "department": "IT"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Mark",
       "department": "Bussiness"
     }
