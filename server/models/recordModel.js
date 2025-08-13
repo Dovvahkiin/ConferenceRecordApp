@@ -1,7 +1,9 @@
 const db = require("../testngDB/records.json");
+const chalk = require("chalk"); // menjanje boje u terminalu
 
 class RecordGetModel {
   GetRecords() {
+    console.table(db.records);
     return db;
   }
   GetRecordById(id) {
@@ -17,6 +19,8 @@ class RecordPostModel {
         : 1;
     const newRecordContent = { id: newID, title, text };
     db.records.push(newRecordContent);
+    console.table(db.records);
+
     return newRecordContent;
   }
 }

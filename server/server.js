@@ -6,6 +6,7 @@ const pg = require("pg");
 const jwt = require("jsonwebtoken");
 const configData = require("./config/data.js");
 const app = express();
+const chalk = require("chalk"); // menjanje boje u terminalu
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -19,5 +20,5 @@ app.use("/", RecordRouter);
 //app.use(cors(configData.corsOptions));
 
 app.listen(configData.nodePort, () =>
-  console.log(`Server started on port: ${configData.nodePort}!`)
+  console.log(chalk.blue(`Server started on port: ${configData.nodePort}!`))
 );

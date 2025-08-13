@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const chalk = require("chalk"); // menjanje boje u terminalu
+
 const {
   RecordGetController,
   RecordPostController,
