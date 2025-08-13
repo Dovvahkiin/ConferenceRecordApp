@@ -1,17 +1,8 @@
+const users = require("../testngDB/db.json");
+
 class UserModel {
   GetUsers(req, res, next) {
-    return [
-      {
-        id: "1",
-        name: "John",
-        department: "IT",
-      },
-      {
-        id: "2",
-        name: "Mark",
-        department: "Bussiness",
-      },
-    ];
+    return users;
   }
 }
 

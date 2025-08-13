@@ -4,7 +4,7 @@ const userModelInstance = new userModel();
 class UserController {
   GetUsers(req, res, next) {
     const users = userModelInstance.GetUsers();
-    res.send(users);
+    res.json(users);
   }
 }
 

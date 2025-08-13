@@ -16,11 +16,6 @@ app.use(UserRouter);
 
 //app.use(cors(configData.corsOptions));
 
-app.get("/testFileImport", (req, res) =>
-  res.json({
-    message: `Hello World! configData:${configData.corsOptions.origin}`,
-  })
-);
 app.listen(configData.nodePort, () =>
   console.log(`Server started on port: ${configData.nodePort}!`)
 );
