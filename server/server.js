@@ -8,11 +8,13 @@ const jwt = require("jsonwebtoken");
 const configData = require("./config/data.js");
 
 const UserRouter = require("./routes/UserRoute.js");
+const RecordRouter = require("./routes/RecordRoute.js");
 
 //main variables
 const app = express();
 
 app.use(UserRouter);
+app.use(RecordRouter);
 
 //app.use(cors(configData.corsOptions));
 

@@ -1,9 +1,12 @@
-const users = require("../testngDB/db.json");
+const db = require("../testngDB/users.json");
 
-class UserModel {
-  GetUsers(req, res, next) {
-    return users;
+class UserGetModel {
+  GetUsers() {
+    return db;
+  }
+  GetUserById(id) {
+    return db.users.find((person) => person.id === id);
   }
 }
 
-module.exports = UserModel;
+module.exports = UserGetModel;

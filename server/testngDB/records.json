@@ -1,0 +1,14 @@
+{
+  "records": [
+    {
+      "id": 1,
+      "title": "record1",
+      "text": "Expelliarmus maxima spiritus sancti padre informo exelcis"
+    },
+    {
+      "id": 2,
+      "title": "record2",
+      "text": "In excelsis precedo bellator decerte adversa incurro invadoria"
+    }
+  ]
+}
