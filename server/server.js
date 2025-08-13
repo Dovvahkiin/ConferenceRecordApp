@@ -5,17 +5,22 @@ require("dotenv").config("./.env");
 const pg = require("pg");
 const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
+const configData = require("./config/data.js");
+
+const UserRouter = require("./routes/UserRoute.js");
 
 //main variables
 const app = express();
-const port = 3000;
-const corsOptions = {
-  origin: ["http://localhost:5173"],
-};
 
-//
+app.use(UserRouter);
 
-app.use(cors(corsOptions));
+//app.use(cors(configData.corsOptions));
 
-app.get("/api", (req, res) => res.json({ message: "Hello World!" }));
-app.listen(port, () => console.log(`Server started on port: ${port}!`));
+app.get("/testFileImport", (req, res) =>
+  res.json({
+    message: `Hello World! configData:${configData.corsOptions.origin}`,
+  })
+);
+app.listen(configData.nodePort, () =>
+  console.log(`Server started on port: ${configData.nodePort}!`)
+);
