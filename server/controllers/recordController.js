@@ -1,13 +1,10 @@
 const chalk = require("chalk"); // menjanje boje u terminalu
 
 const { RecordGetModel, RecordPostModel } = require("../models/recordModel.js");
-/* const [recordGetInstance, recordPostInstance] = [
+const [recordGetInstance, recordPostInstance] = [
   new RecordGetModel(),
   new RecordPostModel(),
-]; */
-const recordGetInstance = new RecordGetModel();
-const recordPostInstance = new RecordPostModel();
-
+];
 /* const recordGetInstance = new RecordGetModel();
 const recordPostInstance = new RecordPostModel(); */
 
@@ -28,20 +25,19 @@ class RecordGetController {
 class RecordPostController {
   CreateNewRecord(req, res) {
     const { title, text } = req.body;
+    const errorMessage = "You cannot submit with empty fields. \n";
 
     if (title === "" || text === "") {
-      console.error(
-        chalk.red("You cannot submit with title or text empty field. \n")
-      );
+      console.error("\nReturn message: " + chalk.red(errorMessage));
       return res.status(400).json({
-        message: "You cannot submit with title or text empty field. \n",
-        titleMessage: title,
-        textMessage: text,
+        errorMessage,
+        titleInput: title,
+        textInput: text,
       });
     }
     const newRecord = recordPostInstance.CreateNewRecord(title, text);
     return res.json({
-      message: "Added successfuly",
+      temporaryMessage: "Added successfuly",
       record: newRecord,
     });
   }
