@@ -21,7 +21,6 @@ CREATE TABLE users(
  userLastName varchar(255) NOT NULL,
  userEmail varchar(255) NOT NULL,
  userPassword varchar(255) NOT NULL,
- isAdmin bool NOT NULL,
  whatRole integer NOT NULL,
  FOREIGN KEY (whatRole) REFERENCES roles(roleID)
 );
