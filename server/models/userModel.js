@@ -1,11 +1,15 @@
-const db = require("../testngDB/users.json");
+const pool = require("../config/database.js");
+const BaseModelView = require("./baseViewModel.js");
 
-class UserGetModel {
-  GetUsers() {
-    return db;
+class UserGetModel extends BaseModelView {
+  constructor() {
+    super("getusers");
   }
-  GetUserById(id) {
-    return db.users.find((person) => person.id === id);
+  async GetUserByID(id) {
+    const [user] = await pool.query("select * from getusers where ID = ? ", [
+      id,
+    ]);
+    return user.length ? user[0] : null;
   }
 }
 

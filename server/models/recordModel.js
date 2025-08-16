@@ -1,11 +1,12 @@
-const db = require("../testngDB/records.json");
 const chalk = require("chalk"); // menjanje boje u terminalu
+const pool = require("../config/database.js");
+const BaseModelView = require("./baseViewModel.js");
 
-class RecordGetModel {
-  GetRecords() {
-    console.table(db.records);
-    return db;
+class RecordGetModel extends BaseModelView {
+  constructor() {
+    super("getRecords");
   }
+
   GetRecordById(id) {
     return db.records.find((record) => record.id === id);
   }

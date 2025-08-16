@@ -9,8 +9,8 @@ const [recordGetInstance, recordPostInstance] = [
 const recordPostInstance = new RecordPostModel(); */
 
 class RecordGetController {
-  GetRecordsControl(req, res) {
-    const records = recordGetInstance.GetRecords();
+  async GetRecordsControl(req, res) {
+    const records = await recordGetInstance.GetTableView();
     res.json(records);
   }
   GetRecordById(req, res) {
