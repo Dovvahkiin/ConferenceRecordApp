@@ -7,8 +7,10 @@ const {
   RecordPostController,
 } = require("../controllers/recordController");
 
-const recordGetControl = new RecordGetController();
-const recordPostControl = new RecordPostController();
+const [recordGetControl, recordPostControl] = [
+  new RecordGetController(),
+  new RecordPostController(),
+];
 
 //router.get("/records", recordGetControl.GetRecordsControl);
 router.get("/records/:id", recordGetControl.GetRecordById);
