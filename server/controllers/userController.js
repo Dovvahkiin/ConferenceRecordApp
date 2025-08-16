@@ -9,7 +9,7 @@ class UserGetController {
   }
   async GetUserByIdControl(req, res) {
     const id = parseInt(req.params.id, 10);
-    const userById = await userModelInstance.GetUserByID(id);
+    const userById = await userModelInstance.GetByID(id);
     console.log(userById);
     if (!userById) {
       return res.status(404).json({ message: "User does not exists!" });

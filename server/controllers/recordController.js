@@ -13,9 +13,9 @@ class RecordGetController {
     const records = await recordGetInstance.GetTableView();
     res.json(records);
   }
-  GetRecordById(req, res) {
+  async GetRecordById(req, res) {
     const id = parseInt(req.params.id, 10);
-    const recordById = recordGetInstance.GetRecordById(id);
+    const recordById = await recordGetInstance.GetByID(id);
     if (!recordById) {
       res.status(404).json({ message: "Record is not found" });
     } else return res.json(recordById);

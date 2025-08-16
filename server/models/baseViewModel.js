@@ -6,8 +6,16 @@ class BaseModelView {
   }
 
   async GetTableView() {
-    const [users] = await pool.query(`select * from ${this.view}`);
-    return users;
+    const [rows] = await pool.query(`select * from ${this.view}`);
+    return rows;
+  }
+
+  async GetByID(id, idColumn = "ID") {
+    const [getID] = await pool.query(
+      `select * from ${this.view} where ${idColumn}= ?`,
+      [id]
+    );
+    return getID.length ? getID[0] : null;
   }
 }
 

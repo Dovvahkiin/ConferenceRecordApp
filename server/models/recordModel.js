@@ -6,10 +6,6 @@ class RecordGetModel extends BaseModelView {
   constructor() {
     super("getRecords");
   }
-
-  GetRecordById(id) {
-    return db.records.find((record) => record.id === id);
-  }
 }
 
 class RecordPostModel {
