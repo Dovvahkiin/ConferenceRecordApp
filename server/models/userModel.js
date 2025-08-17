@@ -22,7 +22,7 @@ class UserPostModel {
       console.log("UserHasBeenAdded: " + newUser);
       return newUser;
     } catch (err) {
-      console.log("Error: " + err);
+      console.log(err);
     }
   }
 }

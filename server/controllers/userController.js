@@ -30,6 +30,7 @@ class UserPostController {
 
     const errors = creationValidation(userData);
     if (errors.length > 0) {
+      console.log("Error:\n" + chalk.red(errors));
       return res.status(400).json({ Error: errors });
     }
 
@@ -46,7 +47,7 @@ class UserPostController {
       console.log("User:\n" + userData + "\n is created.");
       res.status(200).json({ Success: true, createUser });
     } catch (err) {
-      console.log("Error: " + err);
+      console.log("TryCatch Errors: " + err);
       res.status(500).json({ Error: err.message });
     }
   }

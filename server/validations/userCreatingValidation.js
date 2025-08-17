@@ -7,14 +7,12 @@ function createUserValidation(user = {}) {
   if (!username || username.length < 5) {
     errors.push("Error: Username must be at least 5 characters\n");
   }
-  /*   if (!fname || fname.trim() === "");
-  {
+  if (!fname || fname.trim() === "") {
     errors.push("Error: First name cannot be empty\n");
   }
-  if (!lname || lname.trim() === "");
-  {
+  if (!lname || lname.trim() === "") {
     errors.push("Error: Last name cannot be empty\n");
-  } */
+  }
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!email || !emailValid.test(email)) {
     errors.push("Error: Invalid email address\n");
