@@ -6,7 +6,7 @@ const { UserPostController } = require("../controllers/userController.js");
 const AuthControl = new AuthenticationController();
 const UserPostControl = new UserPostController();
 
-router.post("/login", AuthControl.LoginUserControl);
-router.post("/register", UserPostControl.CreateUserControl);
+router.post("/login", AuthControl.LoginUserControl); // login
+router.post("/register", UserPostControl.CreateUserControl); //register
 
 module.exports = router;

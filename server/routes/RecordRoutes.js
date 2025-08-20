@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const chalk = require("chalk"); // menjanje boje u terminalu
 const authToken = require("../middlewares/authentication.js");
 
 const {
@@ -13,12 +12,11 @@ const [recordGetControl, recordPostControl] = [
   new RecordPostController(),
 ];
 
-//router.get("/records", recordGetControl.GetRecordsControl);
-router.get("/records/:id", authToken, recordGetControl.GetRecordById);
+router.get("/records/:id", authToken, recordGetControl.GetRecordById); // record page[id]
 
 router
   .route("/records")
-  .get(authToken, recordGetControl.GetRecordsControl)
-  .post(authToken, recordPostControl.CreateNewRecord);
+  .get(authToken, recordGetControl.GetRecordsControl) // homepage get all records
+  .post(authToken, recordPostControl.CreateNewRecord); // post a new record (add moderator/admin authorization)
 
 module.exports = router;
