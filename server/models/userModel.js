@@ -5,6 +5,18 @@ class UserGetModel extends BaseModelView {
   constructor() {
     super("getusers");
   }
+
+  async LoginUser(username, password) {
+    try {
+      const [login] = await pool.query(
+        "select UserName, Password from getusers",
+        [username, password]
+      );
+      return login;
+    } catch (err) {
+      console.log("failed\n" + err);
+    }
+  }
 }
 
 class UserPostModel {

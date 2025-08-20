@@ -1,6 +1,9 @@
 const chalk = require("chalk");
 const { UserGetModel, UserPostModel } = require("../models/userModel.js");
-const creationValidation = require("../validations/userCreatingValidation.js");
+const {
+  createUserValidation,
+  loginValidation,
+} = require("../validations/validations.js");
 
 const [userGetInstance, userPostInstance] = [
   new UserGetModel(),
@@ -28,7 +31,7 @@ class UserPostController {
   async CreateUserControl(req, res) {
     const userData = req.body;
 
-    const errors = creationValidation(userData);
+    const errors = createUserValidation(userData);
     if (errors.length > 0) {
       console.log("Error:\n" + chalk.red(errors));
       return res.status(400).json({ Error: errors });

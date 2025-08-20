@@ -1,5 +1,3 @@
-const chalk = require("chalk");
-
 function createUserValidation(user = {}) {
   const { username, fname, lname, email, password, role } = user;
   const errors = [];
@@ -23,8 +21,23 @@ function createUserValidation(user = {}) {
   if (!role || role > 3) {
     errors.push("Error: Role cannot be higher than 3\n");
   }
-  console.log("Errors:\n" /* , chalk.red(errors) */);
+  console.log("Errors:\n");
   return errors;
 }
 
-module.exports = createUserValidation;
+function loginValidation(userCredentials = {}) {
+  const { username, password } = userCredentials;
+  const errors = [];
+
+  if (!username || username.trim() === "") {
+    errors.push("Error: Username cannot be empty.");
+  }
+  if (!password || password.trim() === "") {
+    errors.push("Error: Password cannot be empty.");
+  }
+
+  console.log("Errors:\n");
+  return errors;
+}
+
+module.exports = { createUserValidation, loginValidation };
