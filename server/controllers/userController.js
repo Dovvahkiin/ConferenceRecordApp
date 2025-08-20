@@ -71,10 +71,11 @@ class UserPostController {
         console.log("Invalid username or password!");
         res.status(500).json({ Error: "Invalid credentials." });
       } else {
+        req.session.user = { id: loginUser.ID, username: loginUser.UserName };
         console.log(
           "User: " + chalk.green(username) + " is successfully logged in."
         );
-        res.status(200).json({ Success: true, loginUser });
+        res.status(200).json({ Success: true, user: req.session.user });
       }
     } catch (err) {
       console.log("TryCatch Error: " + err);

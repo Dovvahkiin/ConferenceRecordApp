@@ -5,18 +5,14 @@ const {
   UserPostController,
 } = require("../controllers/userController.js");
 
-const [userGetControl, UserPostControl] = [
+const [UserGetControl, UserPostControl] = [
   new UserGetController(),
   new UserPostController(),
 ];
 
 router.post("/login", UserPostControl.LoginUserControl);
-
-router.get("/users/:id", userGetControl.GetUserByIdControl);
-
-router
-  .route("/users")
-  .get(userGetControl.GetUsersControl)
-  .post(UserPostControl.CreateUserControl);
+router.post("/register", UserPostControl.CreateUserControl);
+router.get("/users/:id", UserGetControl.GetUserByIdControl);
+router.get("/users", UserGetControl.GetUsersControl);
 
 module.exports = router;

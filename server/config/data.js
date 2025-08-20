@@ -7,5 +7,7 @@ module.exports = {
   hostHTTP,
   corsOptions: {
     origin: [hostHTTP + nodePort],
+    method: ["GET", "POST"],
+    credentials: true,
   },
 };

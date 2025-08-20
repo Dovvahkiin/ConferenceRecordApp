@@ -7,17 +7,31 @@ const jwt = require("jsonwebtoken");
 const configData = require("./config/data.js");
 const app = express();
 const chalk = require("chalk"); // menjanje boje u terminalu
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
 
 app.use(express.json());
+app.use(cors(configData.corsOptions));
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
+app.use(
+  session({
+    key: process.env.SESSION_KEY,
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60, // MS * SEC * MIN ==> 1hour
+    },
+  })
+);
 
 const UserRouter = require("./routes/UserRoute.js");
 const RecordRouter = require("./routes/RecordRoute.js");
 
 app.use("/", UserRouter);
 app.use("/", RecordRouter);
-
-//app.use(cors(configData.corsOptions));
 
 app.listen(configData.nodePort, () =>
   console.log(chalk.blue(`Server started on port: ${configData.nodePort}!`))
