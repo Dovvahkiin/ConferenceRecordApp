@@ -17,8 +17,6 @@ class RecordPostModel {
     const newRecordContent = { id: newID, title, text };
     db.records.push(newRecordContent);
     console.table(db.records);
-    console.log("\nReturn message: " + chalk.green("Added successfuly"));
-
     return newRecordContent;
   }
 }

@@ -14,7 +14,7 @@ class UserGetModel extends BaseModelView {
       );
       return login[0];
     } catch (err) {
-      console.log("failed\n" + err);
+      console.log("Failed:\n" + err);
     }
   }
 }
@@ -30,8 +30,6 @@ class UserPostModel {
         password,
         role,
       ]);
-
-      console.log("UserHasBeenAdded: " + newUser);
       return newUser;
     } catch (err) {
       console.log(err);

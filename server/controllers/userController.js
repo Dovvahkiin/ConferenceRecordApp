@@ -1,9 +1,6 @@
 const chalk = require("chalk");
 const { UserGetModel, UserPostModel } = require("../models/userModel.js");
-const {
-  createUserValidation,
-  loginValidation,
-} = require("../validations/validations.js");
+const { createUserValidation } = require("../validations/validations.js");
 
 const [userGetInstance, userPostInstance] = [
   new UserGetModel(),
@@ -51,34 +48,6 @@ class UserPostController {
       res.status(200).json({ Success: true, createUser });
     } catch (err) {
       console.log("TryCatch Errors: " + err);
-      res.status(500).json({ Error: err.message });
-    }
-  }
-
-  async LoginUserControl(req, res) {
-    const userData = req.body;
-
-    const errors = loginValidation(userData);
-    if (errors.length > 0) {
-      console.log("Validation errors:\n" + chalk.red(errors));
-      return res.status(400).json({ Error: errors });
-    }
-
-    try {
-      const { username, password } = userData;
-      const loginUser = await userGetInstance.LoginUser(username, password);
-      if (!loginUser) {
-        console.log("Invalid username or password!");
-        res.status(500).json({ Error: "Invalid credentials." });
-      } else {
-        req.session.user = { id: loginUser.ID, username: loginUser.UserName };
-        console.log(
-          "User: " + chalk.green(username) + " is successfully logged in."
-        );
-        res.status(200).json({ Success: true, user: req.session.user });
-      }
-    } catch (err) {
-      console.log("TryCatch Error: " + err);
       res.status(500).json({ Error: err.message });
     }
   }

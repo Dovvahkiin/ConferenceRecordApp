@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const chalk = require("chalk"); // menjanje boje u terminalu
+const authToken = require("../middlewares/authentication.js");
 
 const {
   RecordGetController,
@@ -13,11 +14,11 @@ const [recordGetControl, recordPostControl] = [
 ];
 
 //router.get("/records", recordGetControl.GetRecordsControl);
-router.get("/records/:id", recordGetControl.GetRecordById);
+router.get("/records/:id", authToken, recordGetControl.GetRecordById);
 
 router
   .route("/records")
-  .get(recordGetControl.GetRecordsControl)
-  .post(recordPostControl.CreateNewRecord);
+  .get(authToken, recordGetControl.GetRecordsControl)
+  .post(authToken, recordPostControl.CreateNewRecord);
 
 module.exports = router;

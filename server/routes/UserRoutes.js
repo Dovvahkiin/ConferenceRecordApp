@@ -1,4 +1,5 @@
 const express = require("express");
+const authToken = require("../middlewares/authentication.js");
 const router = express.Router();
 const {
   UserGetController,
@@ -10,9 +11,7 @@ const [UserGetControl, UserPostControl] = [
   new UserPostController(),
 ];
 
-router.post("/login", UserPostControl.LoginUserControl);
-router.post("/register", UserPostControl.CreateUserControl);
-router.get("/users/:id", UserGetControl.GetUserByIdControl);
-router.get("/users", UserGetControl.GetUsersControl);
+router.get("/users/:id", authToken, UserGetControl.GetUserByIdControl);
+router.get("/users", authToken, UserGetControl.GetUsersControl);
 
 module.exports = router;
