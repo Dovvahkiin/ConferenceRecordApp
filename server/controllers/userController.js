@@ -33,7 +33,7 @@ class UserPostController {
 
     const errors = createUserValidation(userData);
     if (errors.length > 0) {
-      console.log("Error:\n" + chalk.red(errors));
+      console.log("Validation errors:\n" + chalk.red(errors));
       return res.status(400).json({ Error: errors });
     }
 
@@ -51,6 +51,33 @@ class UserPostController {
       res.status(200).json({ Success: true, createUser });
     } catch (err) {
       console.log("TryCatch Errors: " + err);
+      res.status(500).json({ Error: err.message });
+    }
+  }
+
+  async LoginUserControl(req, res) {
+    const userData = req.body;
+
+    const errors = loginValidation(userData);
+    if (errors.length > 0) {
+      console.log("Validation errors:\n" + chalk.red(errors));
+      return res.status(400).json({ Error: errors });
+    }
+
+    try {
+      const { username, password } = userData;
+      const loginUser = await userGetInstance.LoginUser(username, password);
+      if (!loginUser) {
+        console.log("Invalid username or password!");
+        res.status(500).json({ Error: "Invalid credentials." });
+      } else {
+        console.log(
+          "User: " + chalk.green(username) + " is successfully logged in."
+        );
+        res.status(200).json({ Success: true, loginUser });
+      }
+    } catch (err) {
+      console.log("TryCatch Error: " + err);
       res.status(500).json({ Error: err.message });
     }
   }

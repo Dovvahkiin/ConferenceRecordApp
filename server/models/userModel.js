@@ -9,10 +9,10 @@ class UserGetModel extends BaseModelView {
   async LoginUser(username, password) {
     try {
       const [login] = await pool.query(
-        "select UserName, Password from getusers",
+        "select * from getusers where username = ? and password = ?",
         [username, password]
       );
-      return login;
+      return login[0];
     } catch (err) {
       console.log("failed\n" + err);
     }

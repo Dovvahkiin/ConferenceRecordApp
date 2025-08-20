@@ -10,6 +10,8 @@ const [userGetControl, UserPostControl] = [
   new UserPostController(),
 ];
 
+router.post("/login", UserPostControl.LoginUserControl);
+
 router.get("/users/:id", userGetControl.GetUserByIdControl);
 
 router
