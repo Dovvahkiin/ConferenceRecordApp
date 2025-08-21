@@ -30,14 +30,28 @@ function loginValidation(userCredentials = {}) {
   const errors = [];
 
   if (!username || username.trim() === "") {
-    errors.push("Error: Username cannot be empty.");
+    errors.push("Error: Username cannot be empty.\n");
   }
   if (!password || password.trim() === "") {
-    errors.push("Error: Password cannot be empty.");
+    errors.push("Error: Password cannot be empty.\n");
   }
 
   console.log("Errors:\n");
   return errors;
 }
 
-module.exports = { createUserValidation, loginValidation };
+function recordValidation(data = {}) {
+  const { title, text } = data;
+  const errors = [];
+
+  if (!title || title.trim() === "") {
+    errors.push("Error: Title cannot be empty!\n");
+  }
+  if (!text || text.trim() === "") {
+    errors.push("Error: Text cannot be empty!\n");
+  }
+  console.log("Errors:\n");
+  return errors;
+}
+
+module.exports = { createUserValidation, loginValidation, recordValidation };

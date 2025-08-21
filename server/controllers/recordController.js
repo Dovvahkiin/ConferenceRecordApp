@@ -1,5 +1,6 @@
 const chalk = require("chalk"); // menjanje boje u terminalu
 
+const { recordValidation } = require("../validations/validations.js");
 const {
   RecordGetModel,
   RecordPostModel,
@@ -28,31 +29,38 @@ class RecordGetController {
 }
 
 class RecordPostController {
-  CreateNewRecord(req, res) {
-    const { title, text } = req.body;
-    const errorMessage = "You cannot submit with empty fields. \n";
-
-    if (title === "" || text === "") {
-      console.error("\nReturn message: " + chalk.red(errorMessage));
-      return res.status(400).json({
-        errorMessage,
-        titleInput: title,
-        textInput: text,
-      });
+  async CreateNewRecord(req, res) {
+    const recordData = req.body;
+    const errors = recordValidation(recordData);
+    if (errors.length > 0) {
+      console.log("Validation errors:\n" + chalk.red(errors));
+      return res.status(400).json({ Error: errors });
     }
-    const newRecord = recordPostInstance.CreateNewRecord(title, text);
-    return res.json({
-      temporaryMessage: "Added successfuly",
-      record: newRecord,
-    });
+    try {
+      const { title, text } = recordData;
+      const createPost = await recordPostInstance.CreateNewRecord(title, text);
+      console.log("Record is created");
+      res.status(200).json({ succMessage: true, createPost });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({ errMsg: "Server Error" });
+    }
   }
 }
 
 class RecordEditController {
   async EditExistingRecord(req, res) {
-    const { title, text } = req.body;
-    const id = parseInt(req.params.id, 10);
+    const data = req.body;
+
+    const errors = recordValidation(data);
+    if (errors.length > 0) {
+      console.log("Validation errors:\n" + chalk.red(errors));
+      return res.status(400).json({ Error: errors });
+    }
+
     try {
+      const { title, text } = data;
+      const id = parseInt(req.params.id, 10);
       const editRecord = await recordEditInstance.EditExistingRecord(
         id,
         title,
@@ -61,7 +69,7 @@ class RecordEditController {
       if (!editRecord) {
         console.log("Record not found");
         res.status(404).json({ errMsg: "Record is not found!" });
-      } else return res.json({ result: editRecord[0] });
+      } else return res.json({ result: editRecord[0][0] });
     } catch (err) {
       console.error(err);
       return res.status(500).json({ errMsg: "Server Error!" });

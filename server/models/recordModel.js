@@ -9,15 +9,16 @@ class RecordGetModel extends BaseModelView {
 }
 
 class RecordPostModel {
-  CreateNewRecord(title, text) {
-    const newID =
-      db.records.length > 0
-        ? Math.max(...db.records.map((records) => records.id)) + 1
-        : 1;
-    const newRecordContent = { id: newID, title, text };
-    db.records.push(newRecordContent);
-    console.table(db.records);
-    return newRecordContent;
+  async CreateNewRecord(title, text) {
+    try {
+      const [createRecord] = await pool.query("call addNewRecord(?,0,?)", [
+        title,
+        text,
+      ]);
+      return createRecord;
+    } catch (err) {
+      console.log(err);
+    }
   }
 }
 
