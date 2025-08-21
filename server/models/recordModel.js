@@ -21,4 +21,20 @@ class RecordPostModel {
   }
 }
 
-module.exports = { RecordGetModel, RecordPostModel };
+class RecordEditModel {
+  async EditExistingRecord(recordID, title, content) {
+    try {
+      const [record] = await pool.query("call updateRecord(?,?,?)", [
+        recordID,
+        title,
+        content,
+      ]);
+      return record;
+    } catch (err) {
+      console.log(err);
+      return null;
+    }
+  }
+}
+
+module.exports = { RecordGetModel, RecordPostModel, RecordEditModel };

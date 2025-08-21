@@ -1,9 +1,14 @@
 const chalk = require("chalk"); // menjanje boje u terminalu
 
-const { RecordGetModel, RecordPostModel } = require("../models/recordModel.js");
-const [recordGetInstance, recordPostInstance] = [
+const {
+  RecordGetModel,
+  RecordPostModel,
+  RecordEditModel,
+} = require("../models/recordModel.js");
+const [recordGetInstance, recordPostInstance, recordEditInstance] = [
   new RecordGetModel(),
   new RecordPostModel(),
+  new RecordEditModel(),
 ];
 /* const recordGetInstance = new RecordGetModel();
 const recordPostInstance = new RecordPostModel(); */
@@ -43,4 +48,29 @@ class RecordPostController {
   }
 }
 
-module.exports = { RecordGetController, RecordPostController };
+class RecordEditController {
+  async EditExistingRecord(req, res) {
+    const { title, text } = req.body;
+    const id = parseInt(req.params.id, 10);
+    try {
+      const editRecord = await recordEditInstance.EditExistingRecord(
+        id,
+        title,
+        text
+      );
+      if (!editRecord) {
+        console.log("Record not found");
+        res.status(404).json({ errMsg: "Record is not found!" });
+      } else return res.json({ result: editRecord[0] });
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ errMsg: "Server Error!" });
+    }
+  }
+}
+
+module.exports = {
+  RecordGetController,
+  RecordPostController,
+  RecordEditController,
+};

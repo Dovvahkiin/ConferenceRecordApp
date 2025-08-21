@@ -6,14 +6,22 @@ const authorization = require("../middlewares/authorization.js");
 const {
   RecordGetController,
   RecordPostController,
+  RecordEditController,
 } = require("../controllers/recordController");
 
-const [recordGetControl, recordPostControl] = [
+const [recordGetControl, recordPostControl, RecordEditControl] = [
   new RecordGetController(),
   new RecordPostController(),
+  new RecordEditController(),
 ];
-
-router.get("/posts/:id", authToken, recordGetControl.GetRecordById); // record page[id]
+router
+  .route("/posts/:id")
+  .get(authToken, recordGetControl.GetRecordById)
+  .put(
+    authToken,
+    authorization("admin", "moderator"),
+    RecordEditControl.EditExistingRecord
+  ); // record page[id]
 
 router.get("/home", authToken, recordGetControl.GetRecordsControl); // homepage get all records
 
