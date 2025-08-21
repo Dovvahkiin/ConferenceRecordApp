@@ -17,7 +17,7 @@ class UserGetController {
     res.json(users);
   }
   async GetUserByIdControl(req, res) {
-    const id = parseInt(req.params.id, 10);
+    const id = req.user.id;
     const userById = await userGetInstance.GetByID(id);
     console.log(userById);
     if (!userById) {

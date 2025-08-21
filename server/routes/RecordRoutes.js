@@ -13,15 +13,15 @@ const [recordGetControl, recordPostControl] = [
   new RecordPostController(),
 ];
 
-router.get("/records/:id", authToken, recordGetControl.GetRecordById); // record page[id]
+router.get("/posts/:id", authToken, recordGetControl.GetRecordById); // record page[id]
 
-router
-  .route("/records")
-  .get(authToken, recordGetControl.GetRecordsControl) // homepage get all records
-  .post(
-    authToken,
-    authorization("admin", "moderator"),
-    recordPostControl.CreateNewRecord
-  ); // post a new record (add moderator/admin authorization)
+router.get("/home", authToken, recordGetControl.GetRecordsControl); // homepage get all records
+
+router.post(
+  "/newpost",
+  authToken,
+  authorization("admin", "moderator"),
+  recordPostControl.CreateNewRecord
+); // post a new record (add moderator/admin authorization)
 
 module.exports = router;

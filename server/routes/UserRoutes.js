@@ -13,9 +13,9 @@ const [UserGetControl, UserPostControl] = [
   new UserPostController(),
 ];
 
-router.get("/users/:id", authToken, UserGetControl.GetUserByIdControl); // test user profile
+router.get("/profile", authToken, UserGetControl.GetUserByIdControl); // test user profile
 router.get(
-  "/users",
+  "/allusers",
   authToken,
   authorization("admin"),
   UserGetControl.GetUsersControl
