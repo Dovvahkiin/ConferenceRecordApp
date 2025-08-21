@@ -9,7 +9,6 @@ function authentication(req, res, next) {
     const user = jwt.verify(token, SECRET);
     req.user = user;
     next(); // if everything is correct continue
-    res.json({ Profile: user });
   } catch (err) {
     res.status(403).json({ Error: "Invalid token" });
   }

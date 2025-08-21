@@ -1,6 +1,9 @@
 const chalk = require("chalk");
 const { UserGetModel, UserPostModel } = require("../models/userModel.js");
 const { createUserValidation } = require("../validations/validations.js");
+const bcrypt = require("bcrypt");
+
+const saltRounds = 10;
 
 const [userGetInstance, userPostInstance] = [
   new UserGetModel(),
@@ -36,12 +39,13 @@ class UserPostController {
 
     try {
       const { username, fname, lname, email, password, role } = userData;
+      const hashedPassword = await bcrypt.hash(password, saltRounds);
       const createUser = await userPostInstance.CreateNewUser(
         username,
         fname,
         lname,
         email,
-        password,
+        hashedPassword,
         role
       );
       console.log("User:\n" + userData + "\n is created.");
