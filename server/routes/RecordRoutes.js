@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const authToken = require("../middlewares/authentication.js");
+const authorization = require("../middlewares/authorization.js");
 
 const {
   RecordGetController,
@@ -17,6 +18,10 @@ router.get("/records/:id", authToken, recordGetControl.GetRecordById); // record
 router
   .route("/records")
   .get(authToken, recordGetControl.GetRecordsControl) // homepage get all records
-  .post(authToken, recordPostControl.CreateNewRecord); // post a new record (add moderator/admin authorization)
+  .post(
+    authToken,
+    authorization("admin", "moderator"),
+    recordPostControl.CreateNewRecord
+  ); // post a new record (add moderator/admin authorization)
 
 module.exports = router;

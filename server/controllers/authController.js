@@ -35,6 +35,7 @@ class AuthenticationController {
         {
           id: loginUser.ID,
           username: loginUser.Username,
+          role: loginUser.RoleName,
         },
         process.env.SESSION_SECRET,
         { expiresIn: "1h" }
