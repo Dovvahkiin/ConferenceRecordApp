@@ -1,13 +1,10 @@
 const chalk = require("chalk");
-const { UserGetModel, UserPostModel } = require("../models/userModel.js");
+const { UserGetModel } = require("../models/userModel.js");
 const { loginValidation } = require("../validations/validations.js");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
-const [userGetInstance, userPostInstance] = [
-  new UserGetModel(),
-  new UserPostModel(),
-];
+const userGetInstance = new UserGetModel();
 
 class AuthenticationController {
   async LoginUserControl(req, res) {
