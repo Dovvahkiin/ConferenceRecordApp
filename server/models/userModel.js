@@ -6,11 +6,11 @@ class UserGetModel extends BaseModelView {
     super("getusers");
   }
 
-  async LoginUser(username, password) {
+  async LoginUser(username) {
     try {
       const [login] = await pool.query(
-        "select * from getusers where username = ? and password = ? LIMIT 1",
-        [username, password]
+        "select * from getusers where username = ? LIMIT 1",
+        [username]
       );
       return login[0];
     } catch (err) {
