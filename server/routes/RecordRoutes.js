@@ -7,12 +7,19 @@ const {
   RecordGetController,
   RecordPostController,
   RecordEditController,
+  RecordDeleteController,
 } = require("../controllers/recordController");
 
-const [recordGetControl, recordPostControl, RecordEditControl] = [
+const [
+  recordGetControl,
+  recordPostControl,
+  RecordEditControl,
+  RecordDeleteControl,
+] = [
   new RecordGetController(),
   new RecordPostController(),
   new RecordEditController(),
+  new RecordDeleteController(),
 ];
 router
   .route("/posts/:id")
@@ -21,6 +28,11 @@ router
     authToken,
     authorization("admin", "moderator"),
     RecordEditControl.EditExistingRecord
+  )
+  .delete(
+    authToken,
+    authorization("admin", "moderator"),
+    RecordDeleteControl.DeleteRecord
   ); // record page[id]
 
 router.get("/home", authToken, recordGetControl.GetRecordsControl); // homepage get all records

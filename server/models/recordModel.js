@@ -1,4 +1,3 @@
-const chalk = require("chalk"); // menjanje boje u terminalu
 const pool = require("../config/database.js");
 const BaseModelView = require("./baseViewModel.js");
 
@@ -38,4 +37,20 @@ class RecordEditModel {
   }
 }
 
-module.exports = { RecordGetModel, RecordPostModel, RecordEditModel };
+class RecordDeleteModel {
+  async DeleteExistingRecord(id) {
+    try {
+      const [selectedRecord] = await pool.query("call deleteRecord(?)", [id]);
+      return selectedRecord[0];
+    } catch (err) {
+      console.log(err);
+    }
+  }
+}
+
+module.exports = {
+  RecordGetModel,
+  RecordPostModel,
+  RecordEditModel,
+  RecordDeleteModel,
+};

@@ -5,11 +5,18 @@ const {
   RecordGetModel,
   RecordPostModel,
   RecordEditModel,
+  RecordDeleteModel,
 } = require("../models/recordModel.js");
-const [recordGetInstance, recordPostInstance, recordEditInstance] = [
+const [
+  recordGetInstance,
+  recordPostInstance,
+  recordEditInstance,
+  recordDeleteInstance,
+] = [
   new RecordGetModel(),
   new RecordPostModel(),
   new RecordEditModel(),
+  new RecordDeleteModel(),
 ];
 /* const recordGetInstance = new RecordGetModel();
 const recordPostInstance = new RecordPostModel(); */
@@ -77,8 +84,27 @@ class RecordEditController {
   }
 }
 
+class RecordDeleteController {
+  async DeleteRecord(req, res) {
+    try {
+      const id = parseInt(req.params.id, 10);
+      const recordDelete = await recordDeleteInstance.DeleteExistingRecord(id);
+      if (!recordDelete) {
+        res.status(404).json({ errMsg: "Record is not found!" });
+      } else
+        return res.json({
+          succMessage: "Successfully deleted record:\n " + recordDelete,
+        });
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ errMsg: "Server Error!" });
+    }
+  }
+}
+
 module.exports = {
   RecordGetController,
   RecordPostController,
   RecordEditController,
+  RecordDeleteController,
 };
