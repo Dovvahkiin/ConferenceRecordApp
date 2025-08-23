@@ -40,6 +40,10 @@ a:hover {
   max-width: 50%;
 }
 
+h1 {
+  text-align: center;
+}
+
 /* Login / Register */
 
 .mainFormat.login {
@@ -150,4 +154,25 @@ label {
 .notFoundContainer > span > a:hover {
   color: green;
   transition: 0.3s ease-in-out;
+}
+
+/* PROFILE */
+
+#profileTitle {
+  font-size: 2rem;
+}
+
+.profileContainer {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profileContainer > p {
+  color: var(--mainGreen);
+}
+
+.profileContainer > p > span {
+  color: white;
 }

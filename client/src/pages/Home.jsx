@@ -6,9 +6,10 @@ function Home() {
   return (
     <div>
       <Header />
+      <h1>Hello, YourName</h1>
       <main className="mainFormat">
         <article className="post">
-          <h1>Post 1</h1>
+          <h2>Post 1</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
             eligendi quasi eveniet quam assumenda non, officia reiciendis atque
@@ -20,7 +21,7 @@ function Home() {
         </article>
 
         <article className="post">
-          <h1>Post 2</h1>
+          <h2>Post 2</h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium
             laboriosam adipisci maiores molestiae necessitatibus modi deserunt
