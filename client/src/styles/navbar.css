@@ -1,7 +1,7 @@
 nav {
-  background-color: var(--mainGreen);
-  border-radius: 30px 30px;
-  margin: 2% 15%;
+  background-color: rgba(20, 20, 20, 0.589);
+  /*   border-radius: 30px 30px;
+  margin: 10px 15%; */
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -10,11 +10,12 @@ a.navLink {
   padding: 1%;
   width: 5%;
 }
-.fullRight {
+/* .fullRight {
   border-radius: 0px 30px 30px 0px;
-}
+} */
 a.navLink:hover {
-  background-color: rgb(43, 90, 28);
+  background-color: rgb(29, 29, 29);
   transition: 0.2s ease-in-out;
   text-decoration: none;
+  border-bottom: 1px solid greenyellow;
 }
