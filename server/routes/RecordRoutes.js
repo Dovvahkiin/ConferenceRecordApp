@@ -35,7 +35,7 @@ router
     RecordDeleteControl.DeleteRecord
   ); // record page[id]
 
-router.get("/home", authToken, recordGetControl.GetRecordsControl); // homepage get all records
+router.get("/", authToken, recordGetControl.GetRecordsControl); // homepage get all records
 
 router.post(
   "/newpost",

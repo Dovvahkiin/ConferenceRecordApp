@@ -1,24 +1,10 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import "./styles/App.css";
+import "./styles/general.css";
+import router from "./routes/routes";
+import { RouterProvider, Link } from "react-router-dom";
+// map routes
 
 function App() {
-  const [message, setMessage] = useState("");
-  const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:3000/api");
-    console.log(response.data.message);
-    setMessage(response.data.message);
-  };
-
-  useEffect(() => {
-    fetchAPI();
-  }, []);
-
-  return (
-    <div>
-      <p>Message is {message}</p>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

@@ -1,0 +1,107 @@
+:root {
+  --mainGreen: rgb(69, 128, 69);
+  --mainFont: helvetica;
+}
+
+body {
+  background-color: rgb(31, 31, 31);
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  font-family: var(--mainFont);
+}
+
+footer {
+  color: var(--mainGreen);
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+}
+
+.mainFormat {
+  margin: 2% 15%;
+  border: 2px solid var(--mainGreen);
+  padding: 2%;
+  border-radius: 30px 30px;
+}
+
+.greenLine {
+  border: 1px solid var(--mainGreen);
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Login */
+
+.mainFormat.login {
+  border: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.logRegPage {
+  border: 1px solid green;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 3%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(36, 126, 41, 0.034);
+  border-radius: 30px 30px;
+}
+.logRegPage > h1 {
+  margin-bottom: 50px;
+}
+.inputField {
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.inputField a {
+  color: var(--mainGreen);
+  text-decoration: underline;
+}
+.inputField a:hover {
+  transition: 1s ease-in;
+  font-style: italic;
+  color: greenyellow;
+}
+
+.inputField button {
+  padding: 10px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px 30px;
+
+  color: var(--mainGreen);
+  background-color: white;
+}
+.inputField button:hover {
+  transition: 0.2s ease-in;
+  background-color: var(--mainGreen);
+  color: white;
+}
+.inputField label {
+  flex: 1;
+  text-align: right;
+}
+
+.inputField input {
+  border: none;
+  padding: 5px;
+  max-width: 300px;
+  flex: 2;
+}
+.loginLine {
+  width: 80%;
+}
