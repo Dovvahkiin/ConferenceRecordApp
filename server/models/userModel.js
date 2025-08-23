@@ -20,15 +20,14 @@ class UserGetModel extends BaseModelView {
 }
 
 class UserPostModel {
-  async CreateNewUser(username, fname, lname, email, password, role) {
+  async CreateNewUser(username, fname, lname, email, password) {
     try {
-      const [newUser] = await pool.query(`call addNewUser (?,?,?,?,?,?)`, [
+      const [newUser] = await pool.query(`call addNewUser (?,?,?,?,?,3)`, [
         username,
         fname,
         lname,
         email,
         password,
-        role,
       ]);
       return newUser;
     } catch (err) {

@@ -18,9 +18,9 @@ function createUserValidation(user = {}) {
   if (!password || password.length < 8) {
     errors.push("Error: Password must be at least 8 characters\n");
   }
-  if (!role || role > 3) {
+  /*   if (!role || role > 3) {
     errors.push("Error: Role cannot be higher than 3\n");
-  }
+  } */
   console.log("Errors:\n");
   return errors;
 }

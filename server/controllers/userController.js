@@ -38,15 +38,14 @@ class UserPostController {
     }
 
     try {
-      const { username, fname, lname, email, password, role } = userData;
+      const { username, fname, lname, email, password } = userData;
       const hashedPassword = await bcrypt.hash(password, saltRounds);
       const createUser = await userPostInstance.CreateNewUser(
         username,
         fname,
         lname,
         email,
-        hashedPassword,
-        role
+        hashedPassword
       );
       console.log("User:\n" + userData + "\n is created.");
       res.status(200).json({ Success: true, createUser });
