@@ -40,7 +40,7 @@ a:hover {
   max-width: 50%;
 }
 
-/* Login */
+/* Login / Register */
 
 .mainFormat.login {
   border: none;
@@ -118,6 +118,12 @@ label {
   width: 80%;
 }
 
+.inputField.reg {
+  gap: 10%;
+}
+.inputField.reg input {
+  margin-right: 7%;
+}
 /* header */
 
 .navBarWrap {
@@ -126,9 +132,22 @@ label {
   bottom: 0;
 }
 
-.inputField.reg {
-  gap: 10%;
+/* NOT FOUND 404  */
+
+.notFoundContainer {
+  margin: 15% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-.inputField.reg input {
-  margin-right: 7%;
+
+.notFoundContainer > span > a {
+  color: greenyellow;
+}
+
+.notFoundContainer > span > a:hover {
+  color: green;
+  transition: 0.3s ease-in-out;
 }
