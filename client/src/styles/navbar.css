@@ -4,11 +4,23 @@ nav {
   margin: 10px 15%; */
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+}
+.navigationRight {
+  display: flex;
   justify-content: flex-end;
+  gap: 20px;
+}
+.navigationLeft {
+  display: flex;
+  justify-content: flex-start;
 }
 a.navLink {
-  padding: 1%;
-  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
 }
 /* .fullRight {
   border-radius: 0px 30px 30px 0px;
