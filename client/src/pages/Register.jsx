@@ -35,7 +35,7 @@ function Register() {
           />
         </div>
         <div className="inputField reg inputs">
-          <label htmlFor="password">Enter password Again: </label>
+          <label htmlFor="password">Confirm Password: </label>
           <input
             type="password"
             name="passwordAgain"

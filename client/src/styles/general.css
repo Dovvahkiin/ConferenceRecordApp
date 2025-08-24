@@ -19,7 +19,7 @@ footer {
 }
 
 .mainFormat {
-  margin: 2% 15%;
+  margin: 2% 12%;
   border: 2px solid var(--mainGreen);
   padding: 2%;
   border-radius: 30px 30px;
@@ -123,7 +123,7 @@ label {
 }
 
 .inputField.reg {
-  gap: 10%;
+  gap: 5%;
 }
 .inputField.reg input {
   margin-right: 7%;
