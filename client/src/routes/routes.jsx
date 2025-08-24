@@ -6,6 +6,8 @@ import Register from "../pages/Register";
 import Record from "../pages/Record";
 import NewPost from "../pages/NewPost";
 import Profile from "../pages/Profile";
+import Moderation from "../pages/Moderation";
+import Administration from "../pages/Administration";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,15 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: <Profile />,
+  },
+  {
+    path: "/mod",
+    element: <Moderation />,
+  },
+
+  {
+    path: "/admin",
+    element: <Administration />,
   },
 ]);
 

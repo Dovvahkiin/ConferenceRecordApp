@@ -11,6 +11,12 @@ function Navbar() {
         <Link className="navLink" to="/profile">
           Profile
         </Link>
+        <Link className="navLink" to="/admin">
+          Administration
+        </Link>
+        <Link className="navLink" to="/mod">
+          Moderation
+        </Link>
       </div>
       <div className="navigationRight">
         <Link to="/login" className="navLink">
