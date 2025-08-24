@@ -176,3 +176,32 @@ label {
 .profileContainer > p > span {
   color: white;
 }
+
+/* Create post */
+.postDiv {
+  display: flex;
+  padding-bottom: 2%;
+  justify-content: flex-start !important;
+}
+.postDiv > label {
+  margin-left: 5%;
+  display: flex;
+  flex: 2;
+  justify-content: flex-start !important;
+}
+.postDiv > input,
+.postDiv > textarea {
+  width: 70%;
+  margin-right: 5%;
+  resize: vertical;
+}
+
+.inputField.post {
+  display: flex;
+  justify-content: center !important;
+  gap: 2%;
+}
+
+#discardPost:hover {
+  background-color: red;
+}
