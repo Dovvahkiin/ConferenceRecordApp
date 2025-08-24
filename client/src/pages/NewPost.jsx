@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Header from "../components/Header/Header";
-
+import Footer from "../components/Footer/Footer";
 const valuesInitialState = {
   postTitle: "",
   postContent: "",
@@ -57,6 +57,7 @@ function NewPost() {
           </div>
         </form>
       </section>
+      <Footer />
     </main>
   );
 }

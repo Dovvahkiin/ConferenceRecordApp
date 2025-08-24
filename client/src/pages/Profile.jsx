@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header/Header";
 import "../styles/general.css";
+import Footer from "../components/Footer/Footer";
 
 function Profile() {
   return (
@@ -23,6 +24,7 @@ function Profile() {
           </p>
         </article>
       </section>
+      <Footer />
     </main>
   );
 }

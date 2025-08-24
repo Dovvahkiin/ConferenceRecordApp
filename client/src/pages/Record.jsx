@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/Header/Header";
-
+import Footer from "../components/Footer/Footer";
 function Record() {
   //todo: if record does not exists show 404
   //todo: load page from db
@@ -24,6 +24,7 @@ function Record() {
           </h4>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
