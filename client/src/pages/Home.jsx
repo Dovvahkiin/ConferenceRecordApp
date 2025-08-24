@@ -3,6 +3,9 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
 function Home() {
+  //TODO: Map records and make each post field with max characters or read more...
+  //?: Make max records per page and add more pages
+
   return (
     <div>
       <Header />
