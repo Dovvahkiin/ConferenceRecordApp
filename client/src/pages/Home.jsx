@@ -4,7 +4,7 @@ import Footer from "../components/Footer/Footer";
 
 function Home() {
   //TODO: Map records and make each post field with max characters or read more...
-  //?: Make max records per page and add more pages
+  //?: Make max records per page and add more pages to select
 
   return (
     <div>
