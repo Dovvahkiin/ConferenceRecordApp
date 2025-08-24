@@ -19,6 +19,7 @@ function NewPost() {
     setValues(valuesInitialState);
     navigate("/");
   }
+  //TODO: Create submit post
 
   return (
     <main>
