@@ -11,7 +11,7 @@ const headerStyle = {
   margin: "0% 0% 5% 0%",
   backgroundImage: `url(${image})`,
   backgroundSize: "cover",
-  height: "25vh",
+  height: "250px",
 };
 
 function Header() {
