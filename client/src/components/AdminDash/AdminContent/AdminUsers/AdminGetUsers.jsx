@@ -1,10 +1,17 @@
 import React from "react";
 
 function AdminGetUsers() {
+  //todo: create search button function
   return (
     <main className="usersContainer">
       <div className="usersContainer heading">
-        <h1>Users:</h1>
+        <div className="getUserHeading">
+          <div className="searchBarUsers">
+            <label htmlFor="">Search User:</label>
+            <input type="text" id="searchUser" name="searchUser" />
+            <button className="buttonSearchAdmin">Search</button>
+          </div>
+        </div>
       </div>
       <table className="tableUsers">
         <tr>
