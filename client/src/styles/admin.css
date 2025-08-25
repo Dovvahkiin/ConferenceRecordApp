@@ -102,6 +102,21 @@
   padding-top: 1%;
 }
 
+#removeUserButton {
+  border: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px 30px;
+  color: rgb(255, 0, 0);
+  padding: 7%;
+  cursor: pointer;
+}
+
+#removeUserButton:hover {
+  background-color: red;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
 /* adduser admin panel */
 
 .usersContainer > form {

@@ -42,7 +42,14 @@ function AdminMenu({ setLayout }) {
           >
             Remove user
           </button>
-          <button>Update user</button>
+          <button
+            onClick={() => {
+              setLayout("updateuser");
+              navigate("/admin?update=updateuser");
+            }}
+          >
+            Update user
+          </button>
         </div>
       )}
       <button

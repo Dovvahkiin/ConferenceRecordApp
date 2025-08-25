@@ -3,6 +3,7 @@ import AdminGetRecords from "./AdminContent/AdminRecords/AdminGetRecords";
 import AdminGetUsers from "./AdminContent/AdminUsers/AdminGetUsers";
 import AdminAddUser from "./AdminContent/AdminUsers/AdminAddUser";
 import AdminRemoveUser from "./AdminContent/AdminUsers/AdminRemoveUser";
+import AdminUpdateUser from "./AdminContent/AdminUsers/AdminUpdateUser";
 
 function AdminContent({ activeLayout }) {
   return (
@@ -13,6 +14,7 @@ function AdminContent({ activeLayout }) {
       {activeLayout === "getusers" && <AdminGetUsers />}
       {activeLayout === "adduser" && <AdminAddUser />}
       {activeLayout === "removeuser" && <AdminRemoveUser />}
+      {activeLayout === "updateuser" && <AdminUpdateUser />}
       {activeLayout === "getrecords" && <AdminGetRecords />}
     </div>
   );
