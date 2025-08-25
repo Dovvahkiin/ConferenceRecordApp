@@ -1,15 +1,30 @@
-import React from "react";
+import { useState } from "react";
 
+const initialValue = "";
 function AdminGetUsers() {
-  //todo: create search button function
+  const [username, setUsername] = useState(initialValue);
+
+  function handleClick(e) {
+    e.preventDefault();
+    //todo: create search button function
+    setUsername(initialValue);
+  }
+
   return (
     <main className="usersContainer">
       <div className="usersContainer heading">
         <div className="getUserHeading">
           <div className="searchBarUsers">
             <label htmlFor="">Search Username:</label>
-            <input type="text" id="searchUser" name="searchUser" />
-            <button className="buttonSearchAdmin">Search</button>
+            <input
+              type="text"
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
+              name="username"
+            />
+            <button onClick={handleClick} className="buttonSearchAdmin">
+              Search
+            </button>
           </div>
         </div>
       </div>
