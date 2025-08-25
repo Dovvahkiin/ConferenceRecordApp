@@ -7,7 +7,7 @@ function AdminGetUsers() {
       <div className="usersContainer heading">
         <div className="getUserHeading">
           <div className="searchBarUsers">
-            <label htmlFor="">Search User:</label>
+            <label htmlFor="">Search Username:</label>
             <input type="text" id="searchUser" name="searchUser" />
             <button className="buttonSearchAdmin">Search</button>
           </div>
