@@ -9,7 +9,7 @@ function Home() {
   return (
     <div>
       <Header />
-      <h1>Hello, YourName</h1>
+      <h1 id="homeH1">Hello, YourName</h1>
       <main className="mainFormat">
         <article className="post">
           <h2>Post 1</h2>

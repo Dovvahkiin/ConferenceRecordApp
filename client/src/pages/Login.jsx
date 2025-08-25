@@ -22,6 +22,7 @@ function Login() {
             name="username"
             placeholder="Enter your username"
             onChange={handleChange}
+            value={values.username}
           />
         </div>
         <div className="inputField">
@@ -31,6 +32,7 @@ function Login() {
             name="password"
             placeholder="Enter your password"
             onChange={handleChange}
+            value={values.password}
           />
         </div>
 

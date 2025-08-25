@@ -40,7 +40,7 @@ a:hover {
   max-width: 50%;
 }
 
-h1 {
+#homeH1 {
   text-align: center;
 }
 
@@ -160,6 +160,7 @@ label {
 
 #profileTitle {
   font-size: 2rem;
+  text-align: center;
 }
 
 .profileContainer {

@@ -1,0 +1,148 @@
+.adminDash {
+  padding: 5%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "menu" "content";
+  margin: 5%;
+}
+
+.adminMenu {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 20px;
+}
+.selectFromPanel {
+  border: none;
+  background-color: var(--mainGreen);
+  border-radius: 30px 30px;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.selectFromPanel:hover {
+  background-color: rgb(40, 146, 40);
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+/* Admin users panel */
+
+.usersContainer {
+  border: 1px solid var(--mainGreen);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.usersContainer.heading {
+  border: 1px solid var(--mainGreen);
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  border-radius: 30px 30px;
+}
+
+.usersContainer > h1 {
+  text-align: center;
+}
+
+.buttonsFormUsers {
+  display: flex;
+  padding-right: 2%;
+  gap: 30px;
+}
+/* Dashboard menu */
+.hiddenMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.hiddenMenu > button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--mainGreen);
+  padding: 2%;
+  font-weight: bold;
+}
+.hiddenMenu > button:hover {
+  color: white;
+  background-color: var(--mainGreen);
+  width: 50%;
+  border-radius: 30px 30px;
+}
+
+/* getusers admin panel */
+.tableUsers {
+  border: 1px solid var(--mainGreen);
+  padding: 5px;
+  width: 80%;
+  align-items: center;
+  margin-bottom: 5%;
+}
+.tableUsers > tr {
+  width: 100%;
+  border: none;
+}
+.tableUsers > tr > th {
+  padding: 10px;
+  color: greenyellow;
+  border-bottom: 1px solid var(--mainGreen);
+}
+.tableUsers > tr > td {
+  text-align: center;
+  padding-top: 1%;
+}
+
+/* adduser admin panel */
+
+.usersContainer > form {
+  border: 1px solid var(--mainGreen);
+  border-radius: 30px 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  padding-bottom: 2%;
+  margin-bottom: 3%;
+}
+
+.addUserInput {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  margin: 5px 0px;
+}
+
+.addUserInput.button {
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+}
+.addUserInput.button > button {
+  border: none;
+  padding: 3%;
+  border-radius: 30px 30px;
+  background-color: var(--mainGreen);
+  color: white;
+  cursor: pointer;
+}
+.addUserInput.button > button:hover {
+  background-color: rgb(98, 143, 31);
+  transition: 0.3s ease-in-out;
+}
+.addUserInput.button > #discard:hover {
+  background-color: red;
+}
+.addUserInput > label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

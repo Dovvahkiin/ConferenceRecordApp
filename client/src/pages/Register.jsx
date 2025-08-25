@@ -9,7 +9,7 @@ function Register() {
   });
 
   function handleChange(e) {
-    setValues({ ...values, [e.target.name]: [e.target.value] });
+    setValues({ ...values, [e.target.name]: e.target.value });
   }
 
   return (
@@ -23,6 +23,7 @@ function Register() {
             name="username"
             placeholder="Enter your username"
             onChange={handleChange}
+            value={values.username}
           />
         </div>
         <div className="inputField reg inputs">
@@ -32,6 +33,7 @@ function Register() {
             name="password"
             placeholder="Enter your password"
             onChange={handleChange}
+            value={values.password}
           />
         </div>
         <div className="inputField reg inputs">
@@ -41,6 +43,7 @@ function Register() {
             name="passwordAgain"
             placeholder="Enter your password"
             onChange={handleChange}
+            value={values.passwordAgain}
           />
         </div>
         <div className="inputField">
